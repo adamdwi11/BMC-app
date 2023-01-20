@@ -1,0 +1,11 @@
+
+.navbar {
+    --bs-navbar-toggler-focus-width: none;
+    --bs-navbar-toggler-border-color: #ffff;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  
+  .navbar-toggler {
+    background-color: none;
+  }
