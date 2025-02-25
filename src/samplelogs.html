@@ -1,0 +1,242 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f7fafc;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        .sidebar {
+            background-color: #065f46;
+            color: white;
+            height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar h2 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            flex: 1;
+        }
+        .sidebar ul li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar ul li i {
+            margin-right: 10px;
+        }
+        .sidebar ul li.active {
+            background-color: #047857;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .main-content {
+            padding: 20px;
+            flex: 1;
+            overflow-y: auto;
+        }
+        .main-content header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .main-content header h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .main-content header .profile {
+            background-color: #e2e8f0;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #065f46;
+        }
+        .nav-tabs {
+            border-bottom: 1px solid #ddd;
+        }
+        .nav-tabs > li > a {
+            border: none;
+            color: #065f46;
+        }
+        .nav-tabs > li.active > a {
+            border: none;
+            border-bottom: 2px solid #065f46;
+        }
+        .filter-section {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .filter-section .form-group {
+            margin-right: 20px;
+            flex: 1;
+        }
+        .table-responsive {
+            margin-bottom: 20px;
+        }
+        pre {
+            background-color: #f7fafc;
+            padding: 20px;
+            border-radius: 5px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <div class="workspace">
+        <div class="workspace-icon" style="background-color: #047857; padding: 10px; border-radius: 5px;">
+            <img src="https://storage.googleapis.com/a1aa/image/UoYF3s_wQw2w5lTLDoBcIkuSFuthBMOYHErfCBHE2Qg.jpg" alt="Workspace Icon" class="img-responsive" style="width: 24px; height: 24px;">
+        </div>
+        <span style="margin-left: 10px; font-size: 12px;">WORKSPACE</span>
+    </div>
+    <h2>Hightouch Testing</h2>
+    <ul>
+        <li><i class="fas fa-sync-alt"></i> Syncs</li>
+        <li><i class="fas fa-cube"></i> Models</li>
+        <li><i class="fas fa-users"></i> Audiences</li>
+        <li><i class="fas fa-database"></i> Sources</li>
+        <li><i class="fas fa-arrow-right"></i> Destinations</li>
+        <li><i class="fas fa-seedling"></i> Sequences</li>
+        <li><i class="fas fa-puzzle-piece"></i> Extensions</li>
+        <li class="active"><i class="fas fa-cog"></i> Settings</li>
+    </ul>
+</div>
+<div class="main-content">
+    <header>
+        <h1>Settings</h1>
+        <div class="profile">M</div>
+    </header>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <ul class="nav nav-tabs">
+                <li><a href="#">Workspace</a></li>
+                <li><a href="#">Members</a></li>
+                <li><a href="#">Roles</a></li>
+                <li><a href="#">Billing</a></li>
+                <li><a href="#">Cloud providers</a></li>
+                <li><a href="#">API keys</a></li>
+                <li><a href="#">Storage</a></li>
+                <li><a href="#">Tunnels</a></li>
+                <li><a href="#">Single sign-on</a></li>
+                <li class="active"><a href="#">Audit log</a></li>
+            </ul>
+            <div class="filter-section">
+                <div class="form-group">
+                    <label for="resource-type">Filter resources</label>
+                    <select class="form-control" id="resource-type">
+                        <option>Resource type</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="user">Performed by</label>
+                    <select class="form-control" id="user">
+                        <option>Select user</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="resource-name">Filter resources by name</label>
+                    <input type="text" class="form-control" id="resource-name" placeholder="Enter a name">
+                </div>
+                <div class="form-group">
+                    <label for="start-date">Start date</label>
+                    <input type="text" class="form-control" id="start-date" placeholder="mm/dd/yyyy">
+                </div>
+                <div class="form-group">
+                    <label for="end-date">End date</label>
+                    <input type="text" class="form-control" id="end-date" placeholder="mm/dd/yyyy">
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>DATE</th>
+                        <th>ACTION</th>
+                        <th>USER</th>
+                        <th>RESOURCE TYPE</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>11/10/22 at 1:44 PM</td>
+                        <td>User Logged Out</td>
+                        <td>Maria Elisabeth Schreiber</td>
+                        <td>Session</td>
+                    </tr>
+                    <tr>
+                        <td>11/10/22 at 1:36 PM</td>
+                        <td>User Logged Out</td>
+                        <td>Benjamin Schafer</td>
+                        <td>Session</td>
+                    </tr>
+                    <tr>
+                        <td>11/10/22 at 1:36 PM</td>
+                        <td>User Logged In</td>
+                        <td>Benjamin Schafer</td>
+                        <td>Session</td>
+                    </tr>
+                    <tr>
+                        <td>11/10/22 at 1:35 PM</td>
+                        <td>User Logged In</td>
+                        <td>Maria Elisabeth Schreiber</td>
+                        <td>Session</td>
+                    </tr>
+                    <tr>
+                        <td>11/10/22 at 1:27 PM</td>
+                        <td>Sync Updated</td>
+                        <td>Nick Stefan</td>
+                        <td>Sync</td>
+                    </tr>
+                    <tr>
+                        <td>11/10/22 at 1:26 PM</td>
+                        <td>User Approved Draft</td>
+                        <td>Nick Stefan</td>
+                        <td>Draft</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <pre>
+{
+    "canary": false,
+    "config": {
+        "autoSyncColumns": false,
+        "changeMethod": "PUT",
+        "configVersion": 0,
+        "contentType": "application/json",
+        "mappings": [],
+        "rowsPerBatch": 1000
+    },
+    "config_metadata": {
+        "changeMethod": {
+            "label": "PUT",
+            "value": "PUT"
+        }
+    }
+}
+            </pre>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
